@@ -14,7 +14,9 @@ public class ArrayQuestions{
 }
     public static void rotateByK(int [] arr,int k)
     {
+        
         int n=arr.length;
+        k=(k%n+n)%n;
         reverse(arr,0,n-k-1);
         reverse(arr,n-k,n-1);
         reverse(arr,0,n-1);
