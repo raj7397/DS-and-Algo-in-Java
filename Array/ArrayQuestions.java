@@ -1,5 +1,33 @@
 import java.util.Scanner;
 public class ArrayQuestions{
+    public static void subset(int [] arr)
+    {   int n=arr.length;
+        int total=(int)Math.pow(2,n);
+        for(int i=0;i<total;i++)
+        {
+            int temp=i;
+            for(int j=n-1;j>=0;j--)
+            {
+                int r=temp%2;
+                temp/=2;
+                if(r==0)
+                {
+                    System.out.print("-\t");
+                }
+                else{
+                    System.out.print(arr[j]+"\t");
+                }
+              //  if((i & (1<<j))==0)
+                //{
+                  //  System.out.print("-\t");
+                //}else{
+                  //  System.out.print(arr[j]+"\t");
+                //}
+            }
+            System.out.println();
+        }
+
+    }
     public static void main(String [] args){
     Scanner scn=new Scanner(System.in);
     int n=scn.nextInt();
@@ -8,9 +36,10 @@ public class ArrayQuestions{
     {
         arr[i]=scn.nextInt();
     }
-    int k=scn.nextInt();
-    rotateByK(arr,k);
-    display(arr);
+    subset(arr);
+//    int k=scn.nextInt();
+  //  rotateByK(arr,k);
+    //display(arr);
 }
     public static void rotateByK(int [] arr,int k)
     {
